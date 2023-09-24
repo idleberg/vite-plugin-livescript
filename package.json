@@ -11,6 +11,7 @@
   "scripts": {
     "build": "lsc --output dist index.ls",
     "prepack": "npm run build",
+    "release": "np --no-yarn --any-branch",
     "test": "npm-run-all --parallel test:*",
     "test:javascript": "cd tests && vite build --config vite-javascript.config.js",
     "test:livescript": "cd tests && vite build --config vite-livescript.config.js",
@@ -26,6 +27,7 @@
     "livescript": "^1.6.0"
   },
   "devDependencies": {
+    "np": "^8.0.4",
     "npm-run-all2": "^6.0.6",
     "vite": "^4.4.9"
   }
