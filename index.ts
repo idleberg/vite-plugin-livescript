@@ -11,7 +11,6 @@ type CompilerOptions = {
 }
 
 export default function LiveScriptPlugin(options: CompilerOptions = {
-	// defaults
 	bare: false,
 	header: false,
 	const: false,

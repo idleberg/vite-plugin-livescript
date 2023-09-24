@@ -19,7 +19,7 @@ import livescript from 'vite-plugin-livescript';
 export default defineConfig({
     plugins: [
         livescript({
-            // defaults
+            // the following are the default values
             bare: false,
             header: false,
             const: false,
