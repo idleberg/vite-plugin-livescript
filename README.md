@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/github/license/idleberg/vite-plugin-livescript?color=blue&style=for-the-badge)](https://github.com/idleberg/vite-plugin-livescript/blob/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/vite-plugin-livescript?style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-livescript)
-[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-livescript/default.yml?style=for-the-badge)](https://github.com/idleberg/vite-plugin-livescript/actions)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/vite-plugin-livescript/tests.yml?style=for-the-badge)](https://github.com/idleberg/vite-plugin-livescript/actions)
 
 ## Installation
 
