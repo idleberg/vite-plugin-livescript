@@ -16,9 +16,12 @@
     "test:livescript": "cd tests && vite build --config vite-livescript.config.js",
     "test:typescript": "cd tests && vite build --config vite-typescript.config.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "vite-plugin",
+    "livescript"
+  ],
+  "author": "Jan T. Sott",
+  "license": "MIT",
   "dependencies": {
     "livescript": "^1.6.0"
   },
