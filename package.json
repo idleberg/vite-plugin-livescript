@@ -1,13 +1,13 @@
 {
   "name": "vite-plugin-livescript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Vite plugin for your LiveScript projects",
   "license": "MIT",
   "author": "Jan T. Sott",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/idleberg/vite-plugin-livescript"
-	},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idleberg/vite-plugin-livescript"
+  },
   "main": "./dist/index.js",
   "exports": {
     ".": {
@@ -17,7 +17,7 @@
     }
   },
   "types": "./dist/index.d.ts",
-	"engines": {
+  "engines": {
     "node": "^14.18.0 || >=16.0.0"
   },
   "files": [
@@ -29,7 +29,7 @@
     "build": "npm-run-all --parallel build:*",
     "build:esm": "tsup index.ts --format esm --platform node --dts",
     "build:cjs": "tsup index.ts --format cjs --platform node --dts",
-		"lint": "eslint index.ts --ignore-path .gitignore",
+    "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
     "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
@@ -57,7 +57,7 @@
     "typescript": "^5.2.2",
     "vite": "^4.4.9"
   },
-	"peerDependencies": {
+  "peerDependencies": {
     "vite": "^4.0.0"
   }
 }
