@@ -2,6 +2,12 @@
   "name": "vite-plugin-livescript",
   "version": "0.1.0",
   "description": "A Vite plugin for your LiveScript projects",
+  "license": "MIT",
+  "author": "Jan T. Sott",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/vite-plugin-livescript"
+	},
   "main": "./dist/index.js",
   "exports": {
     ".": {
@@ -33,8 +39,6 @@
     "vite-plugin",
     "livescript"
   ],
-  "author": "Jan T. Sott",
-  "license": "MIT",
   "dependencies": {
     "@types/node": "^20.6.5",
     "livescript": "^1.6.0"
