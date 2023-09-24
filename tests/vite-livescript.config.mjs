@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import livescript from '../dist/index.js'
+import livescript from '../dist/index.mjs'
 
 export default defineConfig({
 		plugins: [

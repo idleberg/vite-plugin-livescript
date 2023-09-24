@@ -2,20 +2,32 @@
   "name": "vite-plugin-livescript",
   "version": "0.1.0",
   "description": "A Vite plugin for your LiveScript projects",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/",
     "LICENSE",
     "README.md"
   ],
   "scripts": {
-    "build": "lsc --output dist index.ls",
+    "build": "npm-run-all --parallel build:*",
+    "build:esm": "tsup index.ts --format esm --platform node --dts",
+    "build:cjs": "tsup index.ts --format cjs --platform node --dts",
+		"lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
+    "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
     "test": "npm-run-all --parallel test:*",
-    "test:javascript": "cd tests && vite build --config vite-javascript.config.js",
-    "test:livescript": "cd tests && vite build --config vite-livescript.config.js",
-    "test:typescript": "cd tests && vite build --config vite-typescript.config.js"
+    "test:javascript": "cd tests && vite build --config vite-javascript.config.mjs",
+    "test:livescript": "cd tests && vite build --config vite-livescript.config.mjs",
+    "test:typescript": "cd tests && vite build --config vite-typescript.config.mjs"
   },
   "keywords": [
     "vite-plugin",
@@ -24,11 +36,18 @@
   "author": "Jan T. Sott",
   "license": "MIT",
   "dependencies": {
+    "@types/node": "^20.6.5",
     "livescript": "^1.6.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "np": "^8.0.4",
     "npm-run-all2": "^6.0.6",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
     "vite": "^4.4.9"
   }
 }
