@@ -1,7 +1,23 @@
 // @ts-ignore
 import livescript from 'livescript';
 
-export default function LiveScriptPlugin(options = {}) {
+type CompilerOptions = {
+	bare?: boolean;
+	header?: boolean;
+	const?: boolean;
+	json?: boolean;
+	warn?: boolean;
+	filename?: string;
+}
+
+export default function LiveScriptPlugin(options: CompilerOptions = {
+	// defaults
+	bare: false,
+	header: false,
+	const: false,
+	json: false,
+	warn: false
+}) {
 	return {
 		name: 'livescript',
 		async transform(src: string, id: string) {
