@@ -1,19 +1,19 @@
 // @ts-ignore
 import livescript from 'livescript';
 
-type CompilerOptions = {
+type LivescriptCompileOptions = {
 	bare?: boolean;
-	header?: boolean;
 	const?: boolean;
+	filename?: string;
+	header?: boolean;
 	json?: boolean;
 	warn?: boolean;
-	filename?: string;
 }
 
-export default function LiveScriptPlugin(options: CompilerOptions = {
+export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 	bare: false,
-	header: false,
 	const: false,
+	header: false,
 	json: false,
 	warn: false
 }) {
@@ -23,6 +23,7 @@ export default function LiveScriptPlugin(options: CompilerOptions = {
 			if (!/\.ls$/.test(id)) {
 				return;
 			}
+
 			const code = livescript.compile(src, options);
 
 			return {
