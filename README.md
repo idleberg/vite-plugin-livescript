@@ -17,16 +17,17 @@ import { defineConfig } from 'vite';
 import livescript from 'vite-plugin-livescript';
 
 export default defineConfig({
-    plugins: [
-        livescript({
-            // the following are the default values
-            bare: false,
-            header: false,
-            const: false,
-            json: false,
-            warn: false
-        })
-    ]
+	plugins: [
+		livescript({
+			// the following are the default values
+			bare: false,
+			const: false,
+			header: false,
+			json: false,
+			map: false,
+			warn: false,
+		})
+	]
 });
 ```
 

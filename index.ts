@@ -1,5 +1,5 @@
 // @ts-ignore
-import livescript from 'livescript';
+import { compile } from 'livescript';
 
 type LivescriptCompileOptions = {
 	bare?: boolean;
@@ -7,6 +7,7 @@ type LivescriptCompileOptions = {
 	filename?: string;
 	header?: boolean;
 	json?: boolean;
+	map?: boolean;
 	warn?: boolean;
 }
 
@@ -15,6 +16,7 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 	const: false,
 	header: false,
 	json: false,
+	map: false,
 	warn: false
 }) {
 	return {
@@ -24,10 +26,17 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 				return;
 			}
 
-			const code = livescript.compile(src, options);
+			const result = compile(src, options);
+
+			if (options.map) {
+				return {
+					code: result.code,
+					map: result.map
+				};
+			}
 
 			return {
-				code: code
+				code: result
 			};
 		}
 	}
