@@ -31,7 +31,7 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 			if (options.map) {
 				return {
 					code: result.code,
-					map: result.map
+					map: result.map.toJSON()
 				};
 			}
 
