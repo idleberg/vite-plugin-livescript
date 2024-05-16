@@ -10,24 +10,28 @@ type LivescriptCompileOptions = {
 	warn?: boolean;
 }
 
+type LiveScriptTransform = {
+	code: string;
+	map: string;
+} | void;
+
 export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 	bare: false,
 	const: false,
 	header: false,
 	json: false,
-	warn: false
+	warn: false,
 }) {
 	return {
 		name: 'livescript',
-		async transform(src: string, id: string) {
+		transform(src: string, id: string): LiveScriptTransform {
 			if (!/\.ls$/.test(id)) {
 				return;
 			}
 
 			const result = compile(src, {
 				...options,
-				// force sourcemaps to be generated, even though the actual creation is tied to build.sourcemap
-				map: true
+				map: true,
 			});
 
 			return {
