@@ -25,9 +25,9 @@ const inputs = [
 						output: {
 							dir: resolve(__dirname, 'dist/assets'),
 							entryFileNames: sourcemap ? '[name]-[hash]-with-sourcemap.js': undefined,
-						}
+						},
 					},
-					sourcemap
+					sourcemap,
 				}
 			});
 		})
