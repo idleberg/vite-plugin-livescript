@@ -4,15 +4,15 @@ on:
   push:
     paths:
     - '.github/**'
-    - 'src/**'
     - 'tests/**'
+    - 'index.ts'
     - 'package.json'
     - 'pnpm-lock.yaml'
   pull_request:
     paths:
     - '.github/**'
-    - 'src/**'
     - 'tests/**'
+    - 'index.ts'
     - 'package.json'
     - 'pnpm-lock.yaml'
   workflow_dispatch:
