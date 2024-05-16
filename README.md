@@ -36,4 +36,4 @@ Please refer to the [LiveScript documentation](https://livescript.net/#usage) fo
 
 ## License
 
-This work is licensed under [The MIT License](LICENSE)
+This work is licensed under [The MIT License](LICENSE).
