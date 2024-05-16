@@ -12,17 +12,24 @@ const inputs = [
 ];
 
 (async () => {
-	inputs.forEach(async input => {
-		await build({
-			plugins: [
-				livescript()
-			],
-			build: {
-				emptyOutDir: false,
-				rollupOptions: {
-					input: resolve(__dirname, input)
+	inputs.forEach(input => {
+		[true, false].forEach(async sourcemap => {
+			await build({
+				plugins: [
+					livescript(),
+				],
+				build: {
+					emptyOutDir: false,
+					rollupOptions: {
+						input: resolve(__dirname, input),
+						output: {
+							dir: resolve(__dirname, 'dist/assets'),
+							entryFileNames: sourcemap ? '[name]-[hash]-with-sourcemap.js': undefined,
+						}
+					},
+					sourcemap
 				}
-			}
-		});
+			});
+		})
 	})
 })();
