@@ -24,7 +24,6 @@ export default defineConfig({
 			const: false,
 			header: false,
 			json: false,
-			map: false,
 			warn: false,
 		})
 	]
