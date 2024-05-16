@@ -33,10 +33,7 @@
     "prepack": "npm run build",
     "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
-    "test": "npm-run-all --parallel test:*",
-    "test:javascript": "cd tests && vite build --config vite-javascript.config.mjs",
-    "test:livescript": "cd tests && vite build --config vite-livescript.config.mjs",
-    "test:typescript": "cd tests && vite build --config vite-typescript.config.mjs"
+    "test": "node tests/build.mjs"
   },
   "keywords": [
     "vite-plugin",
