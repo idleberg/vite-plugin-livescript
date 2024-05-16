@@ -7,7 +7,6 @@ type LivescriptCompileOptions = {
 	filename?: string;
 	header?: boolean;
 	json?: boolean;
-	map?: boolean;
 	warn?: boolean;
 }
 
@@ -16,7 +15,6 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 	const: false,
 	header: false,
 	json: false,
-	map: false,
 	warn: false
 }) {
 	return {
@@ -26,17 +24,15 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 				return;
 			}
 
-			const result = compile(src, options);
-
-			if (options.map) {
-				return {
-					code: result.code,
-					map: result.map.toJSON()
-				};
-			}
+			const result = compile(src, {
+				...options,
+				// force sourcemaps to be generated, even though the actual creation is tied to build.sourcemap
+				map: true
+			});
 
 			return {
-				code: result
+				code: result.code,
+				map: result.map.toJSON()
 			};
 		}
 	}
