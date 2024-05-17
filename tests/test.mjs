@@ -2,18 +2,20 @@ import { build } from 'vite'
 import { basename, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { access } from 'node:fs/promises';
-import { suite, test } from 'uvu';
+import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
 import livescript from '../dist/index.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+/**
+ * @type {Record<string, string>}
+ */
 const inputs = {
 	'examples.ls': '92b1e209',
 	'js-entrypoint.js': 'b7f0689e',
 	'ts-entrypoint.ts': 'ef395b9b',
 };
-
 
 for (const input of Object.keys(inputs)) {
 	const testSuite = suite(basename(input));
@@ -41,6 +43,10 @@ for (const input of Object.keys(inputs)) {
 	testSuite.run();
 }
 
+/**
+ * @param {string} filePath
+ * @returns {Promise<boolean>}
+ */
 async function fileExists(filePath) {
 	const absolutePath = resolve(__dirname, 'dist/assets', filePath);
 
@@ -52,6 +58,11 @@ async function fileExists(filePath) {
 	}
 }
 
+/**
+ * @param {string} input
+ * @param {boolean} sourcemap
+ * @returns {Promise<void>}
+ */
 async function viteBuild(input, sourcemap) {
 	await build({
 		build: {
