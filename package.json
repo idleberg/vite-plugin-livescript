@@ -33,7 +33,7 @@
     "prepack": "npm run build",
     "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
-    "test": "node tests/build.mjs"
+    "test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
   },
   "keywords": [
     "vite-plugin",
