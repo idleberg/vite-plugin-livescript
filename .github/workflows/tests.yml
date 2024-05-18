@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: ['lts/*', '*']
+        node-version: ['14', '16', '18', '20', '22']
         os: [ubuntu-latest]
 
     steps:
