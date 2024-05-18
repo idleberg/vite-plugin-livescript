@@ -39,23 +39,23 @@
     "vite-plugin",
     "livescript"
   ],
-	"dependencies": {
-		"livescript": "^1.6.0"
-	},
+  "dependencies": {
+    "livescript": "^1.6.0"
+  },
   "devDependencies": {
-    "@types/node": "^14.18.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
-    "eslint": "^8.50.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "@types/node": "^14.18.63",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "livescript": "^1.6.0",
     "np": "^8.0.4",
-    "npm-run-all2": "^6.0.6",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2",
+    "npm-run-all2": "^6.2.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
     "uvu": "^0.5.6",
-    "vite": "^4.4.9"
+    "vite": "^4.5.3"
   },
   "peerDependencies": {
     "vite": "^4.0.0"
