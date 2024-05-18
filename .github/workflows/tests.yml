@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['14', '16', '18', '20', '22']
+        node-version: ['16', '18', '20', '22']
         os: [ubuntu-latest]
 
     steps:
