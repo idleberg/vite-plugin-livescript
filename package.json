@@ -40,7 +40,6 @@
     "livescript"
   ],
   "dependencies": {
-    "livescript": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
@@ -58,6 +57,7 @@
     "vite": "^4"
   },
   "peerDependencies": {
+		"livescript": "^1.6.0",
     "vite": "^4"
   },
   "lint-staged": {

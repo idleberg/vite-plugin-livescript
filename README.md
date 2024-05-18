@@ -8,7 +8,7 @@
 
 ## Installation
 
-`npm install -D vite-plugin-livescript`
+`npm install -D livescript vite-plugin-livescript`
 
 ## Usage
 
