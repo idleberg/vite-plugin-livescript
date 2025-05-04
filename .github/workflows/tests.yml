@@ -3,18 +3,18 @@ name: CI
 on:
   push:
     paths:
-    - '.github/**'
-    - 'tests/**'
-    - 'index.ts'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/**"
+      - "tests/**"
+      - "index.ts"
+      - "package.json"
+      - "pnpm-lock.yaml"
   pull_request:
     paths:
-    - '.github/**'
-    - 'tests/**'
-    - 'index.ts'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/**"
+      - "tests/**"
+      - "index.ts"
+      - "package.json"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ['18', '20', '22']
+        node-version: ["18", "20", "22"]
         os: [ubuntu-latest]
 
     steps:
@@ -35,22 +35,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 8
-          run_install: false
+      - name: Enable Corepack
+        run: |
+          npm install --global corepack@latest
+          corepack enable
 
       - name: Get pnpm store directory
-        id: pnpm-cache
+        shell: bash
         run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         name: Setup pnpm cache
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
