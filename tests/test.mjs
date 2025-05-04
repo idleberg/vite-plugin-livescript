@@ -1,10 +1,10 @@
-import { build } from 'vite'
+import { access } from 'node:fs/promises';
 import { basename, dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { access } from 'node:fs/promises';
 import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
-import livescript from '../dist/index.mjs'
+import { build } from 'vite';
+import livescript from '../dist/index.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -77,8 +77,6 @@ async function viteBuild(input, sourcemap) {
 			sourcemap,
 		},
 		logLevel: 'silent',
-		plugins: [
-			livescript(),
-		],
+		plugins: [livescript()],
 	});
 }

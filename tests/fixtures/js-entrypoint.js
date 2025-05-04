@@ -1,2 +1,2 @@
-import './examples.ls'
+import './examples.ls';
 console.log('JavaScript');

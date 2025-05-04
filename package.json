@@ -1,63 +1,56 @@
 {
-  "name": "vite-plugin-livescript",
-  "version": "2.0.0",
-  "description": "A Vite plugin for your LiveScript projects",
-  "license": "MIT",
-  "author": "Jan T. Sott",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/idleberg/vite-plugin-livescript"
-  },
-  "main": "./dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "types": "./dist/index.d.ts",
-  "engines": {
-    "node": "^16.0.0 || ^18.0.0 || >=22.0.0"
-  },
-  "files": [
-    "dist/",
-    "LICENSE",
-    "README.md"
-  ],
-  "scripts": {
-    "build": "npm-run-all --parallel build:*",
-    "build:esm": "tsup index.ts --format esm --platform node --dts",
-    "build:cjs": "tsup index.ts --format cjs --platform node --dts",
-    "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
-    "prepack": "npm run build",
-    "release": "np --no-yarn --any-branch",
-    "test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
-  },
-  "keywords": [
-    "vite-plugin",
-    "livescript"
-  ],
-  "dependencies": {
-    "livescript": "^1.6.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@total-typescript/tsconfig": "^1.0.4",
-    "@types/node": "^16.0.0",
-    "lefthook": "^1.11.12",
-    "livescript": "^1.6.0",
-    "np": "^8.0.4",
-    "npm-run-all2": "^6.2.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.3.3",
-    "uvu": "^0.5.6",
-    "vite": "^6.0.0"
-  },
-  "peerDependencies": {
-    "vite": "^5.0.0 || >=6.0.0"
-  },
+	"name": "vite-plugin-livescript",
+	"version": "2.0.0",
+	"description": "A Vite plugin for your LiveScript projects",
+	"license": "MIT",
+	"author": "Jan T. Sott",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/idleberg/vite-plugin-livescript"
+	},
+	"main": "./dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": "^16.0.0 || ^18.0.0 || >=22.0.0"
+	},
+	"files": ["dist/", "LICENSE", "README.md"],
+	"scripts": {
+		"build": "npm-run-all --parallel build:*",
+		"build:esm": "tsup index.ts --format esm --platform node --dts",
+		"build:cjs": "tsup index.ts --format cjs --platform node --dts",
+		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+		"prepack": "npm run build",
+		"release": "np --no-yarn --any-branch",
+		"test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
+	},
+	"keywords": ["vite-plugin", "livescript"],
+	"dependencies": {
+		"livescript": "^1.6.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/node": "^16.0.0",
+		"lefthook": "^1.11.12",
+		"livescript": "^1.6.0",
+		"np": "^8.0.4",
+		"npm-run-all2": "^6.2.0",
+		"tsup": "^8.0.2",
+		"typescript": "^5.3.3",
+		"uvu": "^0.5.6",
+		"vite": "^6.0.0"
+	},
+	"peerDependencies": {
+		"vite": "^5.0.0 || >=6.0.0"
+	},
 	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }

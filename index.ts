@@ -8,20 +8,24 @@ type LivescriptCompileOptions = {
 	header?: boolean;
 	json?: boolean;
 	warn?: boolean;
-}
+};
 
-type LiveScriptTransform = {
-	code: string;
-	map: string;
-} | void;
+type LiveScriptTransform =
+	| {
+			code: string;
+			map: string;
+	  }
+	| undefined;
 
-export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
-	bare: false,
-	const: false,
-	header: false,
-	json: false,
-	warn: false,
-}) {
+export default function LiveScriptPlugin(
+	options: LivescriptCompileOptions = {
+		bare: false,
+		const: false,
+		header: false,
+		json: false,
+		warn: false,
+	},
+) {
 	return {
 		name: 'livescript',
 		transform(src: string, id: string): LiveScriptTransform {
@@ -36,8 +40,8 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 
 			return {
 				code: result.code,
-				map: result.map.toJSON()
+				map: result.map.toJSON(),
 			};
-		}
-	}
+		},
+	};
 }
