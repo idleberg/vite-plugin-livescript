@@ -19,12 +19,12 @@ on:
 
 jobs:
   tests:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         node-version: ["18", "20", "22"]
-        os: [ubuntu-latest]
+        vite-version: ["vite@5", "vite@6"]
 
     steps:
       - uses: actions/checkout@v4
@@ -54,7 +54,9 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+        run: |
+          pnpm install --frozen-lockfile --strict-peer-dependencies
+          pnpm install ${{ matrix.vite-version }}
 
       - name: Lint Source
         run: pnpm exec biome ci
