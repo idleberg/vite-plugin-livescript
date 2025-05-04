@@ -1,6 +1,6 @@
 {
 	"name": "vite-plugin-livescript",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "A Vite plugin for your LiveScript projects",
 	"license": "MIT",
 	"author": "Jan T. Sott",
