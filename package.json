@@ -31,8 +31,7 @@
 		"test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
 	},
 	"keywords": ["vite-plugin", "livescript"],
-	"dependencies": {
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@commitlint/cli": "^19.8.0",
