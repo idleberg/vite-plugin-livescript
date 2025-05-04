@@ -20,9 +20,13 @@
 	"engines": {
 		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
 	},
-	"files": ["dist/", "LICENSE", "README.md"],
+	"files": [
+		"dist/",
+		"LICENSE",
+		"README.md"
+	],
 	"scripts": {
-		"build": "npm-run-all --parallel build:*",
+		"build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
 		"build:esm": "tsup index.ts --format esm --platform node --dts",
 		"build:cjs": "tsup index.ts --format cjs --platform node --dts",
 		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
@@ -30,20 +34,22 @@
 		"release": "np --no-yarn --any-branch",
 		"test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
 	},
-	"keywords": ["vite-plugin", "livescript"],
-	"dependencies": {},
+	"keywords": [
+		"vite-plugin",
+		"livescript"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@commitlint/cli": "^19.8.0",
 		"@commitlint/config-conventional": "^19.8.0",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/node": "^16.0.0",
+		"concurrently": "^9.1.2",
 		"lefthook": "^1.11.12",
 		"livescript": "^1.6.0",
 		"np": "^8.0.4",
-		"npm-run-all2": "^6.2.0",
-		"tsup": "^8.0.2",
-		"typescript": "^5.3.3",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.3",
 		"uvu": "^0.5.6",
 		"vite": "^6.0.0"
 	},
