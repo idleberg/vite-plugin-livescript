@@ -31,6 +31,7 @@ export default function LiveScriptPlugin(options: LivescriptCompileOptions = {
 
 			const result = compile(src, {
 				...options,
+				filename: id,
 				map: true,
 			});
 
