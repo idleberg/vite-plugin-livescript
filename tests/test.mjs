@@ -12,9 +12,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * @type {Record<string, string>}
  */
 const inputs = {
-	'examples.ls': '92b1e209',
-	'js-entrypoint.js': 'b7f0689e',
-	'ts-entrypoint.ts': 'ef395b9b',
+	'examples.ls': 'B9GbsluQ',
+	'js-entrypoint.js': 'bVunJ3eu',
+	'ts-entrypoint.ts': 'BhxSFibT',
 };
 
 for (const input of Object.keys(inputs)) {
