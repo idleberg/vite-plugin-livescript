@@ -29,9 +29,8 @@
     "build": "npm-run-all --parallel build:*",
     "build:esm": "tsup index.ts --format esm --platform node --dts",
     "build:cjs": "tsup index.ts --format cjs --platform node --dts",
-    "lint": "eslint index.ts --ignore-path .gitignore",
+    "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
-    "prepare": "husky install",
     "release": "np --no-yarn --any-branch",
     "test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
   },
@@ -43,12 +42,12 @@
     "livescript": "^1.6.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^16.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.57.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "lefthook": "^1.11.12",
     "livescript": "^1.6.0",
     "np": "^8.0.4",
     "npm-run-all2": "^6.2.0",
@@ -59,8 +58,5 @@
   },
   "peerDependencies": {
     "vite": "^5.0.0 || >=6.0.0"
-  },
-  "lint-staged": {
-    "*.ts": "eslint --cache --fix"
   }
 }
