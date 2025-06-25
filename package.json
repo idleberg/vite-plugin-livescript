@@ -39,16 +39,16 @@
 		"livescript"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"@commitlint/cli": "^19.8.0",
-		"@commitlint/config-conventional": "^19.8.0",
+		"@biomejs/biome": "^2.0.5",
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/node": "^22.15.3",
-		"concurrently": "^9.1.2",
-		"lefthook": "^1.11.12",
+		"concurrently": "^9.2.0",
+		"lefthook": "^1.11.14",
 		"livescript": "^1.6.0",
 		"np": "^10.2.0",
-		"tsup": "^8.4.0",
+		"tsup": "^8.5.0",
 		"typescript": "^5.8.3",
 		"uvu": "^0.5.6",
 		"vite": "^7.0.0"
