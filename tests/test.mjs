@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { suite } from 'uvu';
 import * as assert from 'uvu/assert';
 import { build } from 'vite';
-import livescript from '../dist/index.mjs';
+import livescript from '../dist/plugin.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

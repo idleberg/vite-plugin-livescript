@@ -8,15 +8,15 @@
 		"type": "git",
 		"url": "https://github.com/idleberg/vite-plugin-livescript"
 	},
-	"main": "./dist/index.js",
+	"main": "./dist/plugin.js",
 	"exports": {
 		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"import": "./dist/plugin.mjs",
+			"require": "./dist/plugin.js",
+			"types": "./dist/plugin.d.ts"
 		}
 	},
-	"types": "./dist/index.d.ts",
+	"types": "./dist/plugin.d.ts",
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
 	},
@@ -26,9 +26,8 @@
 		"README.md"
 	],
 	"scripts": {
-		"build": "concurrently --prefix '{name}' -c 'blue,green' 'npm:build:*'",
-		"build:esm": "tsup index.ts --format esm --platform node --dts",
-		"build:cjs": "tsup index.ts --format cjs --platform node --dts",
+		"build": "tsdown",
+		"dev": "tsdown --watch",
 		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
 		"prepack": "npm run build",
 		"publish:npm": "np --any-branch",
@@ -48,7 +47,7 @@
 		"lefthook": "^1.11.14",
 		"livescript": "^1.6.0",
 		"np": "^10.2.0",
-		"tsup": "^8.5.0",
+		"tsdown": "^0.12.9",
 		"typescript": "^5.8.3",
 		"uvu": "^0.5.6",
 		"vite": "^7.0.0"
