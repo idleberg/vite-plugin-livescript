@@ -6,14 +6,14 @@
 	"author": "Jan T. Sott",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/idleberg/vite-plugin-livescript"
+		"url": "git+https://github.com/idleberg/vite-plugin-livescript.git"
 	},
 	"main": "./dist/plugin.js",
 	"exports": {
 		".": {
+			"types": "./dist/plugin.d.ts",
 			"import": "./dist/plugin.mjs",
-			"require": "./dist/plugin.js",
-			"types": "./dist/plugin.d.ts"
+			"require": "./dist/plugin.js"
 		}
 	},
 	"types": "./dist/plugin.d.ts",
