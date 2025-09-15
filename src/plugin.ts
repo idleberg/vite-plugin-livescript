@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error Livescript is not typed
 import { compile } from 'livescript';
 
 type LivescriptCompileOptions = {
