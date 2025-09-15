@@ -28,7 +28,7 @@
 	"scripts": {
 		"build": "tsdown",
 		"dev": "tsdown --watch",
-		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+		"lint": "biome check",
 		"prepack": "npm run build",
 		"publish:npm": "np --any-branch",
 		"test": "uvu tests --ignore 'dist' --ignore 'fixtures'"
@@ -38,19 +38,20 @@
 		"livescript"
 	],
 	"devDependencies": {
-		"@biomejs/biome": "^2.0.5",
+		"@biomejs/biome": "^2.2.4",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
+		"@idleberg/configs": "^0.2.0",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/node": "^22.15.3",
-		"concurrently": "^9.2.0",
-		"lefthook": "^1.11.14",
+		"concurrently": "^9.2.1",
+		"lefthook": "^1.13.0",
 		"livescript": "^1.6.0",
 		"np": "^10.2.0",
-		"tsdown": "^0.12.9",
-		"typescript": "^5.8.3",
+		"tsdown": "^0.15.1",
+		"typescript": "^5.9.2",
 		"uvu": "^0.5.6",
-		"vite": "^7.0.0"
+		"vite": "^7.1.5"
 	},
 	"peerDependencies": {
 		"livescript": ">=1.6.0",
