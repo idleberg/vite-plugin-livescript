@@ -41,14 +41,14 @@
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
 		"@idleberg/configs": "^0.3.1",
-		"@types/node": "^22.15.3",
+		"@types/node": "^24.5.2",
 		"concurrently": "^9.2.1",
 		"livescript": "^1.6.0",
 		"np": "^10.2.0",
-		"tsdown": "^0.15.1",
+		"tsdown": "^0.15.2",
 		"typescript": "^5.9.2",
 		"uvu": "^0.5.6",
-		"vite": "^7.1.5"
+		"vite": "^7.1.6"
 	},
 	"peerDependencies": {
 		"livescript": ">=1.6.0",
