@@ -8,15 +8,16 @@
 		"type": "git",
 		"url": "git+https://github.com/idleberg/vite-plugin-livescript.git"
 	},
-	"main": "./dist/plugin.js",
+	"main": "./dist/plugin.cjs",
 	"exports": {
-		".": {
-			"types": "./dist/plugin.d.ts",
-			"import": "./dist/plugin.mjs",
-			"require": "./dist/plugin.js"
-		}
+		"types": {
+			"import": "./dist/plugin.d.mts",
+			"require": "./dist/plugin.d.cts"
+		},
+		"import": "./dist/plugin.mjs",
+		"require": "./dist/plugin.cjs"
 	},
-	"types": "./dist/plugin.d.ts",
+	"types": "./dist/plugin.d.cts",
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
 	},
